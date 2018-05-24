@@ -1,0 +1,17 @@
+{
+  "name": "nomflix",
+  "version": "1.0.0",
+  "description": "cloning netflix / JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "node index.js"
+  },
+  "author": "Me",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4"
+  },
+  "devDependencies": {}
+}
