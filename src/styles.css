@@ -77,3 +77,39 @@ header .profile {
   height: 30px;
   margin-right: 10px;
 }
+
+.video {
+  width: 100%;
+}
+
+
+.category {
+}
+
+.category .title {
+}
+
+.category .column {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
+
+.category .column .card {
+  background-color: wheat;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.category .column .card:hover {
+  transform: scale(2);
+}
+
+.category .column .left {
+  /* transform: translateX(-100px); */
+}
+
+.category .column .right {
+  /* transform: translateX(100px); */
+}
+
