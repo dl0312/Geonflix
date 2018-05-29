@@ -1,13 +1,3 @@
-const videoApp = document.getElementById("bgVideo");
-
-videoApp.innerHTML = `
-<video autoplay loop controls class="video js-video" src="http://www.html5videoplayer.net/videos/toystory.mp4"></video>
-	<button class="js-playBtn"></button>
-	<button class="js-muteBtn"></button>
-	<input type="range" min="0" max="1" step="0.1" class="js-range"/>
-	<script src="src/index.js"></script>
-`;
-
 const video = document.querySelector(".js-video"),
   muteBtn = document.querySelector(".js-muteBtn"),
   playBtn = document.querySelector(".js-playBtn"),
