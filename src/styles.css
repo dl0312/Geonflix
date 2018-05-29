@@ -1,3 +1,79 @@
 body {
-  background: url("./peterson.jpg");
+  height: 1200vh;
+  background-color: gray;
+  color: #e5e5e5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  transition: background-color 0.5s linear;
+}
+
+.darken {
+  background-color: #141414;
+}
+
+header .nav {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+header .contentColumn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+header .alarm {
+  position: relative;
+}
+
+header .alarm .layer {
+  position: absolute;
+  background-color: #b9090b;
+  border-radius: 50%;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  top: -7px;
+  left: 9px;
+}
+
+header .userColumn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .userColumn .user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .logo {
+  height: 65px;
+  margin: 0 25px;
+}
+
+header .profile {
+  height: 30px;
+  margin-right: 10px;
 }
