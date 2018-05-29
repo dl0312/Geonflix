@@ -29,43 +29,14 @@ const commonConfig = {
         exclude: /(node_modules)/,
         use: [
           {
-            loader: "file-loader",
+            loader: "url-loader",
             options: {
-              name: "[name].[ext]",
-              outputPath: "img/",
-              publicPath: "img/"
+              limit: 10000
             }
+          },
+          {
+            loader: "img-loader"
           }
-          // {
-          //   loader: "url-loader",
-          //   options: {
-          //     limit: 10000
-          //   }
-          // },
-          // {
-          //   loader: "img-webpack-loader",
-          //   options: {
-          //     mozjpeg: {
-          //       progressive: true,
-          //       quality: 65
-          //     },
-          //     // optipng.enabled: false will disable optipng
-          //     optipng: {
-          //       enabled: false
-          //     },
-          //     pngquant: {
-          //       quality: "65-90",
-          //       speed: 4
-          //     },
-          //     gifsicle: {
-          //       interlaced: false
-          //     },
-          //     // the webp option will enable WEBP
-          //     webp: {
-          //       quality: 75
-          //     }
-          //   }
-          // }
         ]
       }
     ]
