@@ -1,61 +1,20 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Geonflix</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
-
+    <link src="./styles.css">
 <link href="styles.css" rel="stylesheet"></head>
 
 <body>
-    <header class="header" />
-    <div class="nav">
-        <div class="contentColumn">
-            <img class="logo" src="4fb0f066e3dd23e9aba52b07b3b41237.png" />
-            <div class="subtitle ">홈</div>
-            <div class="subtitle ">TV 프로그램</div>
-            <div class="subtitle ">영화</div>
-            <div class="subtitle ">넷플릭스 오리지널</div>
-            <div class="subtitle ">최신 등록 콘텐츠</div>
-            <div class="subtitle ">내가 찜한 콘텐츠</div>
-        </div>
-        <div class="userColumn ">
-            <div class="subtitle search ">
-                <i class="fas fa-search fa-lg "></i>
-            </div>
-            <div class="subtitle ">키즈</div>
-            <div class="subtitle alarm ">
-                <i class="fas fa-bell fa-lg ">
-                    <div class="layer ">1</div>
-                </i>
-            </div>
-            <div class="subtitle user ">
-                <img class="profile " src="data:image/png;base64,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" />
-                <i class=" fas fa-sort-down " style="color:#e5e5e5 "></i>
-            </div>
-        </div>
-    </div>
-    </header>
-    <div id="bgVideo ">
-        <video autoplay loop controls class="video js-video " src="http://www.html5videoplayer.net/videos/toystory.mp4 "></video>
-        <button class="js-playBtn "></button>
-        <button class="js-muteBtn "></button>
-        <input type="range " min="0 " max="1 " step="0.1 " class="js-range " />
-        <script src="src/index.js "></script>
-    </div>
-    <div class="videoCategory ">
-        <div class="category ">
-            <div class="title ">Netflix 오리지널</div>
-            <div class="column ">
-                <div class="card ">1</div>
-                <div class="card ">2</div>
-                <div class="card ">3</div>
-                <div class="card ">4</div>
-                <div class="card ">5</div>
-            </div>
-        </div>
-    </div>
+    <div id="app"></div>
+    <script src="index.js"></script>
 <script type="text/javascript" src="bundle.js"></script></body>
 
 </html>
