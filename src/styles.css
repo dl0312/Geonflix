@@ -1,9 +1,12 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 body {
   height: 1200vh;
   background-color: gray;
   color: #e5e5e5;
   margin: 0;
   padding: 0;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 header {
