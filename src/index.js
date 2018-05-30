@@ -134,9 +134,16 @@ const handleCardMouseLeave = event => {
   Array.from(nextCards).forEach(card => card.classList.remove("right"));
 };
 
+const handleCardClick = event => {
+  location.href = "./video.html";
+};
+
 cardArray.forEach(card => {
+  card.addEventListener("click", handleCardClick);
   card.addEventListener("mouseover", handleCardMouseOver);
   card.addEventListener("mouseleave", handleCardMouseLeave);
 });
 
 import "./styles.css";
+import "./video";
+import "./video.css";
