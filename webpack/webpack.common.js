@@ -17,8 +17,8 @@ const PATHS = {
 
 const commonConfig = {
   entry: {
-    index: ["babel-polyfill", PATHS.app],
-    video: ["babel-polyfill", PATHS.video]
+    app: ["babel-polyfill", PATHS.app],
+    player: ["babel-polyfill", PATHS.video]
   },
   module: {
     rules: [
@@ -65,11 +65,12 @@ const commonConfig = {
     new HtmlWebpackPlugin({
       template: PATHS.template,
       filename: "index.html",
-      chunks: ["index"]
+      chunks: ["app"]
     }),
     new HtmlWebpackPlugin({
       template: PATHS.template2,
-      filename: "video.html"
+      filename: "video.html",
+      chunks: ["player"]
     })
   ]
 };

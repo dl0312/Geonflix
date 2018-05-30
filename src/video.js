@@ -130,13 +130,13 @@ const handleVolumeRangeChange = event => {
 
 const handleLengthRangeChange = event => {
   const currentLength = event.target.value;
-  video.currentTime = currentLength;
+  video.currentTime = currentLength * video.duration / 100;
   localStorage.setItem("time", currentLength);
 };
 setInterval(oneSecondFunction, 1000);
 
 function oneSecondFunction() {
-  lengthRange.value = video.currentTime;
+  lengthRange.value = video.currentTime / video.duration * 100;
   videoTime.innerHTML = `${Math.floor(video.currentTime / 60)}:${
     Math.floor(video.currentTime % 60) < 10
       ? "0" + Math.floor(video.currentTime % 60)

@@ -15,20 +15,17 @@ window.addEventListener("scroll", handleScrollHeader);
 
 const video = document.querySelector(".js-video"),
   muteBtn = document.querySelector(".js-muteBtn"),
-  playBtn = document.querySelector(".js-playBtn"),
-  range = document.querySelector(".js-range");
+  playBtn = document.querySelector(".js-playBtn");
 
 const loadVolume = () => {
   const mutePref = localStorage.getItem("isMuted");
-  const volume = localStorage.getItem("volume");
+  const volume = localStorage.getItem("volume") / 100;
   if (mutePref === "true") {
-    video.volume = volume;
-    range.value = 0;
+    video.volume = 1;
     video.muted = true;
     muteBtn.innerHTML = `<i class="fas fa-volume-off"></i>`;
   } else {
-    video.volume = volume;
-    range.value = volume;
+    video.volume = 1;
     video.muted = false;
     muteBtn.innerHTML = `<i class="fas fa-volume-up"></i>`;
   }
@@ -51,12 +48,10 @@ const handleMuteBtnClick = () => {
     // Unmute
     video.muted = false;
     muteBtn.innerHTML = `<i class="fas fa-volume-up"></i>`;
-    range.value = localStorage.getItem("volume");
     localStorage.setItem("isMuted", false);
   } else {
     // Mute
     video.muted = true;
-    range.value = 0;
     muteBtn.innerHTML = `<i class="fas fa-volume-off"></i>`;
     localStorage.setItem("isMuted", true);
   }
@@ -74,14 +69,13 @@ const handlePlayBtnClick = () => {
 
 const handleRangeChange = event => {
   const currentVolume = event.target.value;
-  video.volume = currentVolume;
+  video.volume = currentVolume / 100;
   localStorage.setItem("volume", currentVolume);
 };
 
 window.addEventListener("scroll", handleScrollVideo);
 muteBtn.addEventListener("click", handleMuteBtnClick);
 playBtn.addEventListener("click", handlePlayBtnClick);
-range.addEventListener("change", handleRangeChange);
 loadVolume();
 
 const cards = document.querySelectorAll(".card");
