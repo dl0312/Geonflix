@@ -9,12 +9,17 @@ const MODE = process.env.npm_lifecycle_event;
 
 const PATHS = {
   app: path.join(__dirname, "../src/index.js"),
+  video: path.join(__dirname, "../src/video.js"),
   output: path.join(__dirname, "../dist"),
-  template: path.join(__dirname, "../src/index.html")
+  template: path.join(__dirname, "../src/index.html"),
+  template2: path.join(__dirname, "../src/video.html")
 };
 
 const commonConfig = {
-  entry: ["babel-polyfill", PATHS.app],
+  entry: {
+    app: ["babel-polyfill", PATHS.app],
+    player: ["babel-polyfill", PATHS.video]
+  },
   module: {
     rules: [
       {
@@ -54,12 +59,17 @@ const commonConfig = {
   },
   output: {
     path: PATHS.output,
-    filename: "bundle.js"
+    filename: "[name].js"
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: PATHS.template,
-      filename: "index.html"
+      filename: "index.html",
+      chunks: ["index"]
+    }),
+    new HtmlWebpackPlugin({
+      template: PATHS.template2,
+      filename: "video.html"
     })
   ]
 };
