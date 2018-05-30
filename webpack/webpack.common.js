@@ -17,8 +17,8 @@ const PATHS = {
 
 const commonConfig = {
   entry: {
-    app: ["babel-polyfill", PATHS.app],
-    player: ["babel-polyfill", PATHS.video]
+    index: ["babel-polyfill", PATHS.app],
+    video: ["babel-polyfill", PATHS.video]
   },
   module: {
     rules: [
