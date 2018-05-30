@@ -1,5 +1,3 @@
-import video_1 from "./img/hana.mp4";
-
 const header = document.querySelector(".header");
 
 const handleScrollHeader = event => {
@@ -135,7 +133,7 @@ const handleCardMouseLeave = event => {
 };
 
 const handleCardClick = event => {
-  location.href = "./video.html";
+  location.href = `${videoLink}`;
 };
 
 cardArray.forEach(card => {
@@ -144,6 +142,7 @@ cardArray.forEach(card => {
   card.addEventListener("mouseleave", handleCardMouseLeave);
 });
 
+import videoLink from "./video.html";
 import "./styles.css";
-import "./video";
+import "./video.html";
 import "./video.css";
