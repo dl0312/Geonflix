@@ -1,4 +1,5 @@
 const header = document.querySelector(".header");
+const body = document.body;
 
 const handleScrollHeader = event => {
   const scrollHeight = window.scrollY;
@@ -133,7 +134,7 @@ const handleCardMouseLeave = event => {
 };
 
 const handleCardClick = event => {
-  location.href = `${videoLink}`;
+  location.href = "./video.html";
 };
 
 cardArray.forEach(card => {
@@ -142,7 +143,4 @@ cardArray.forEach(card => {
   card.addEventListener("mouseleave", handleCardMouseLeave);
 });
 
-import videoLink from "./video.html";
 import "./styles.css";
-import "./video.html";
-import "./video.css";
