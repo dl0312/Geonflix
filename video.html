@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            background-color: #010001;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+
+        video {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -40%;
+            /* margin is -0.5 * dimension */
+            margin-top: -22.5%;
+        }
+
+        .videoColumn .buttonColumn {
+            height: 8%;
+            position: absolute;
+            left: 7.5%;
+            width: 85%;
+            bottom: 5%;
+            display: flex;
+            background-color: #262626;
+            border-radius: 10px
+        }
+
+        .videoColumn .buttonColumn .titleColumn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 5%;
+            font-size: 12px;
+            border-left: 0.5px solid #2f3233;
+            border-right: 0.5px solid black;
+            width: 100%;
+
+        }
+
+
+        .videoColumn .buttonColumn .titleColumn .title {
+            color: white;
+            margin-right: 3%;
+        }
+
+        .videoColumn .buttonColumn .titleColumn .subtitle {
+            color: gray;
+        }
+
+        .js-playBtn {
+            cursor: pointer;
+            background-color: transparent;
+            border-style: none;
+
+            border-right: 0.5px solid black;
+            width: 8%;
+            transition: font-size 0.2s ease;
+            outline: none;
+        }
+
+        .js-playBtn:hover {
+            font-size: 18px;
+        }
+
+        .js-muteBtn {
+            cursor: pointer;
+
+            background-color: transparent;
+            border-style: none;
+
+            border-left: 0.5px solid #2f3233;
+            border-right: 0.5px solid black;
+            width: 8%;
+            transition: font-size 0.2s ease;
+            outline: none;
+
+
+        }
+
+        .js-muteBtn:hover {
+            font-size: 18px;
+        }
+
+        .js-qnaBtn {
+            cursor: pointer;
+
+            background-color: transparent;
+            border-style: none;
+
+            border-left: 0.5px solid #2f3233;
+            border-right: 0.5px solid black;
+            width: 8%;
+            transition: font-size 0.2s ease;
+            outline: none;
+
+
+
+        }
+
+        .js-qnaBtn:hover {
+            font-size: 18px;
+        }
+
+
+        .js-fullscreenBtn {
+            cursor: pointer;
+
+            background-color: transparent;
+            border-style: none;
+
+            border-left: 0.5px solid #2f3233;
+            width: 8%;
+            transition: font-size 0.2s ease;
+            outline: none;
+
+
+        }
+
+        .js-fullscreenBtn:hover {
+            font-size: 18px;
+        }
+
+
+        .js-videoLengthRangeColumn {
+            position: absolute;
+            left: 10%;
+            width: 80%;
+            bottom: 15%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .js-videoLengthRangeColumn .js-videoTime {
+            color: white;
+        }
+
+        .js-videoLengthRangeColumn .js-videoLengthRange {
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            width: 100%;
+            height: 15px;
+
+            margin-right: 10px;
+            -webkit-appearance: none;
+            border-radius: 5px;
+            background: #262626;
+            outline: none;
+        }
+
+        .js-videoLengthRangeColumn .js-videoLengthRange::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: darkred;
+            cursor: pointer;
+            transition: background .15s ease-in-out;
+        }
+
+        .js-videoLengthRangeColumn .js-videoLengthRange::-webkit-slider-thumb:hover {
+            background: red;
+        }
+
+        .volumeColumn {
+            display: flex;
+            align-items: center;
+            padding: 0 1%;
+            width: 20%;
+            border-left: 0.5px solid #2f3233;
+            border-right: 0.5px solid black;
+        }
+
+        .js-videoVolumeRange {
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: rgb(66, 66, 66);
+            outline: none;
+        }
+
+        .js-videoVolumeRange::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: darkred;
+            cursor: pointer;
+            transition: background .15s ease-in-out;
+        }
+
+        .js-videoVolumeRange::-webkit-slider-thumb:hover {
+            background: red;
+        }
+    </style>
+<link href="styles.css" rel="stylesheet"></head>
+
+<body>
+    <div id="Video " class="videoColumn">
+        <video autoplay loop class="video js-video " src="http://www.html5videoplayer.net/videos/toystory.mp4 ">
+        </video>
+        <div class="buttonColumn">
+            <button class="js-playBtn"></button>
+            <button class="js-muteBtn "></button>
+            <div class="volumeColumn">
+                <input class="js-videoVolumeRange" type="range" min="0 " max="1 " step="0.05 " />
+            </div>
+            <div class="titleColumn">
+                <div class="title">토이 스토리 3</div>
+                <div class="subtitle"></div>
+            </div>
+            <button class="js-qnaBtn">
+                <i class="far fa-question-circle fa-lg" style="color:#9d9d9d "></i>
+            </button>
+            <button class="js-fullscreenBtn">
+                <i class="fas fa-expand fa-lg" style="color:#9d9d9d "></i>
+            </button>
+        </div>
+        <div class="js-videoLengthRangeColumn">
+            <input class="js-videoLengthRange" type="range" min="0 " max="1 " step="0.05 " />
+            <div class="js-videoTime"></div>
+        </div>
+    </div>
+    <script src="video.js"></script>
+<script type="text/javascript" src="app.js"></script><script type="text/javascript" src="player.js"></script></body>
+
+</html>
